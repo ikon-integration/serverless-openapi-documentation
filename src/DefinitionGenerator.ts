@@ -148,9 +148,7 @@ export class DefinitionGenerator {
       operationObj.requestBody = this.getRequestBodiesFromConfig(documentationConfig);
     }
 
-    if (documentationConfig.parameters) {
-      operationObj.parameters = this.getParametersFromConfig(documentationConfig);
-    }
+    operationObj.parameters = this.getParametersFromConfig(documentationConfig);
 
     operationObj.responses = this.getResponsesFromConfig(documentationConfig);
 
