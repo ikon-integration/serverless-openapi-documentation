@@ -20,6 +20,7 @@ Works well with [Lincoln OpenAPI Renderer](https://github.com/temando/open-api-r
     - [`cookieParams`](#cookieparams)
     - [`requestModels`](#requestmodels)
     - [`methodResponses`](#methodresponses)
+    - [`x-code-samples`](#x-code-samples)
 - [Example Configuration](#example-configuration)
 - [Install](#install)
 
@@ -298,6 +299,27 @@ requestHeaders:
     description: "Content Type header"
     schema:
       type: "string"
+```
+
+#### `x-code-samples`
+
+The `x-code-samples` section of the configuration allows you to define some code samples for the function event. Use the standard swagger/openapi format for x-code-samples
+
+The attributes for a code sample are as follow:
+
+* `lang`: the language of the code example
+* `source`: the actual code example. Cannot contain local variable references like using a template string or 'this'
+```
+x-code-samples:
+  - lang: 'javascript'
+    source: |
+      const url = 'https://someurl'
+      const headers = {};
+      return http.get( url, headers )
+        .pipe(
+          map(extractData ),
+          catchError( handleError ),
+        );
 ```
 
 ## Example configuration

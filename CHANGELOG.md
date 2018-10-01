@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.5.0][] - 2018-10-1
+
+- Added code samples via x-code-samples for an endpoint using the swagger/openapi format. Code samples cannot include references to variables (like template strings or 'this')
+
 ## [0.4.0][] - 2018-04-04
 
 - Various changes

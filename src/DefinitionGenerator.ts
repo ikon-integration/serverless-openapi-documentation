@@ -148,12 +148,26 @@ export class DefinitionGenerator {
       operationObj.requestBody = this.getRequestBodiesFromConfig(documentationConfig);
     }
 
+    if (documentationConfig['x-code-samples']) {
+      operationObj['x-code-samples'] = documentationConfig['x-code-samples'];
+    }
     operationObj.parameters = this.getParametersFromConfig(documentationConfig);
 
     operationObj.responses = this.getResponsesFromConfig(documentationConfig);
 
     return operationObj;
   }
+
+  // /*
+  // * Derives code samples from Serverless documentation
+  // * @param documentationConfig
+  // * */
+  // private getCodeSamplesFromConfig (documentationConfig) {
+  //   const samples = [];
+  //   for (const sample of documentationConfig['x-code-samples']) {
+  //
+  //   }
+  // }
 
   /**
    * Derives Path, Query and Request header parameters from Serverless documentation
